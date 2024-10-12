@@ -147,6 +147,47 @@ public:
         }
     }
 };
+class DoctorDutyManagement : public Hospital {
+private:
+    string dutyDate;
+    string dutyTime;
+    string doctorID;
+public:
+    DoctorDutyManagement() {}
+    DoctorDutyManagement(string d_date, string d_time, string d_id) {
+        dutyDate = d_date;
+        dutyTime = d_time;
+        doctorID = d_id;
+    }
+    void displayDutyDetails() {
+        cout << "\n--- Doctor Duty Details ---\n";
+        cout << "Duty Date: " << dutyDate << endl;
+        cout << "Duty Time: " << dutyTime << endl;
+        cout << "Doctor ID: " << doctorID << endl;
+    }
+};
+class BillGeneration : public Hospital {
+private:
+    int patientID;
+    double consultationFee;
+    double medicineCost;
+    double totalBill;
+public:
+    BillGeneration() {}
+    BillGeneration(int p_id, double c_fee, double m_cost) {
+        patientID = p_id;
+        consultationFee = c_fee;
+        medicineCost = m_cost;
+        totalBill = c_fee + m_cost;
+    }
+    void displayBillDetails() {
+        cout << "\n--- Bill Details ---\n";
+        cout << "Patient ID: " << patientID << endl;
+        cout << "Consultation Fee: " << consultationFee << endl;
+        cout << "Medicine Cost: " << medicineCost << endl;
+        cout << "Total Bill: " << totalBill << endl;
+    }
+};
 int main() {
     Hospital hospital;
     int choice;
